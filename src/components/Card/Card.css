@@ -1,10 +1,37 @@
+
 .card-article {
-    border: 2px solid blue;
-    max-width: 600px;
+    /* border: 2px solid blue; */
+    max-width: 800px;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    font-style: normal;
+    font-family: Roboto;
 }
+
+.card-body {
+    text-align: left;
+}
+.card-category {
+    text-transform: uppercase;
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+.card-author {
+    text-decoration: none;
+    cursor: pointer;
+    color: #000;
+    /* color: #acacace2; */
+}
+
+.card-author:hover {
+    text-decoration: underline;
+}
+
+
 
 /* img {
     height: 200px;

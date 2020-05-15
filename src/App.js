@@ -8,28 +8,28 @@ import Card from './components/Card/Card'
 
 const DATA = [
   {
-    category: 'Programing', 
-    title: 'JS', 
-    description: 'Programming languages',
-    author: 'Fernanda', 
-    publicationDate: '2017-23-12',
-    readTime: '2 min'
+    category: 'POPULAR ON MEDIUM', 
+    title: 'JavaScript Best Practices — Code That We Shouldn’t Have', 
+    description: 'Bad case statements, unclear decimals and type conversions, and more.',
+    author: 'John Au-Yeung in The Startup', 
+    publicationDate: 'Apr 29',
+    readTime: '2 min read'
   },
   {
-    category: 'Programing 2', 
-    title: 'JS', 
-    description: 'Programming languages',
-    author: 'Fernanda', 
-    publicationDate: '2017-23-12',
-    readTime: '2 min'
+    category: 'POPULAR ON MEDIUM', 
+    title: 'JavaScript Best Practices — Code That We Shouldn’t Have', 
+    description: 'Bad case statements, unclear decimals and type conversions, and more.',
+    author: 'John Au-Yeung in The Startup', 
+    publicationDate: 'Apr 29',
+    readTime: '2 min read'
   },
   {
-    category: 'Programing 3', 
-    title: 'JS', 
-    description: 'Programming languages',
-    author: 'Fernanda', 
-    publicationDate: '2017-23-12',
-    readTime: '2 min'
+    category: 'POPULAR ON MEDIUM', 
+    title: 'JavaScript Best Practices — Code That We Shouldn’t Have', 
+    description: 'Bad case statements, unclear decimals and type conversions, and more.',
+    author: 'John Au-Yeung in The Startup', 
+    publicationDate: 'Apr 29',
+    readTime: '2 min read'
   }
 ]
 
@@ -63,6 +63,7 @@ export default class App extends Component {
           <h1>
             Bootcamp White - <strong>React</strong>
           </h1>
+          <Clock />
         </header>
 
         <div className="cards-container">
@@ -71,7 +72,7 @@ export default class App extends Component {
           //  (<Card category={category} title={title} description={description} author={author} publicationDate={publicationDate} readTime={readTime} />)
           //  )
 
-          this.printCards(DATA)
+          this.printCards()
 
          }
         </div>
