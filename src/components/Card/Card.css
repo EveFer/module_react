@@ -1,38 +1,70 @@
 
+p { 
+    margin: 4px 0;
+}
 .card-article {
     /* border: 2px solid blue; */
-    max-width: 800px;
+    max-width: 720px;
+    color: rgba(0, 0, 0, 0.84);
     display: flex;
     align-items: center;
     justify-content: space-between;
     font-style: normal;
-    font-family: Roboto;
 }
 
-.card-body {
+.card-article .card-body {
     text-align: left;
 }
-.card-category {
+
+.card-article .card-body .card-category {
     text-transform: uppercase;
+    color:rgba(0,0,0,.54)
 }
 
-.card-title {
-    font-weight: bold;
+.card-article .card-body .card-title {
+    font-weight: 600;
+    font-size: 24px;
+    color:rgba(0,0,0,.84)
 }
 
-.card-author {
+.card-article .card-body .card-description {
+    color: rgba(0,0,0,.54);
+    font-size: 16px;
+    margin-top: 2px;
+    margin-bottom: 10px;
+}
+
+.card-article .card-body .card-section-author-icons .card-author {
     text-decoration: none;
     cursor: pointer;
     color: #000;
-    /* color: #acacace2; */
+    
 }
 
-.card-author:hover {
+.card-article .card-body .card-section-author-icons .card-author:hover {
     text-decoration: underline;
 }
 
+.card-article .card-body .card-section-author-icons .card-date-time-reading{
+    font-weight: 400;
+    color: rgba(0,0,0,.54);
+    font-size: 15px;
+}
 
+.card-article .card-body .card-section-author-icons .card-date-time-reading .fa-star {
+    font-size: 11px;
+}
 
-/* img {
-    height: 200px;
-} */
+.card-article .card-body .card-section-author-icons {
+    display:flex;
+    justify-content: space-between;
+}
+
+.card-article .card-body .card-section-author-icons .card-icons{
+    font-size: 18px;
+    color:rgba(0,0,0,.68)
+}
+
+.card-article .card-body .card-section-author-icons .card-icons .fa-ellipsis-h {
+    margin-left: 20px
+}

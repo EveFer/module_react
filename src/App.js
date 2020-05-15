@@ -55,7 +55,6 @@ export default class App extends Component {
   }
 
   render() {
-    let articles = DATA
     return (
       <div className="App">
         <header className="App-header">
