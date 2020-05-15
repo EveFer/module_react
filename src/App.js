@@ -6,6 +6,8 @@ import './App.css';
 import Clock from './components/Clock/Clock'
 import Card from './components/Card/Card'
 
+import Counter from './components/Counter/Counter'
+
 const DATA = [
   {
     category: 'POPULAR ON MEDIUM', 
@@ -55,7 +57,6 @@ export default class App extends Component {
   }
 
   render() {
-    let articles = DATA
     return (
       <div className="App">
         <header className="App-header">
@@ -64,6 +65,8 @@ export default class App extends Component {
             Bootcamp White - <strong>React</strong>
           </h1>
           <Clock />
+
+          <Counter numInit={1}/>
         </header>
 
         <div className="cards-container">
