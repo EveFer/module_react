@@ -7,6 +7,13 @@ import Clock from './components/Clock/Clock'
 import Card from './components/Card/Card'
 
 import Counter from './components/Counter/Counter'
+import Button from './components/Button'
+
+import Notes from './components/Notes'
+
+import Form from './components/Form'
+
+import CondicionalRedering from './components/CondicionalRedering'
 
 const DATA = [
   {
@@ -64,9 +71,16 @@ export default class App extends Component {
           <h1>
             Bootcamp White - <strong>React</strong>
           </h1>
-          <Clock />
+          {/* <Clock />
 
-          <Counter numInit={1}/>
+          <Counter step={1} stop={20} multiplo={2}/>
+          <Button/> */}
+
+          {/* <Notes /> */}
+
+          {/* <Form /> */}
+
+          <CondicionalRedering />
         </header>
 
         <div className="cards-container">

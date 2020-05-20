@@ -19,25 +19,30 @@ export default class Counter extends Component {
         counter: 0
     }
   }
+
+  // se ejecuta una vez el component se haya montado
   componentDidMount() {
-      this.setState({counter: this.props.numInit})
       this.counterInterval = setInterval(()=> this.setCounter(), 1000)
   }
   componentDidUpdate() {
-      if(this.state.counter%8 === 0){
-        console.log(`${this.state.counter} es multiplo de 8`)
+    let {counter} = this.state
+    let { stop, mutliplo } = this.props
+      if(counter%mutliplo === 0){
+        console.log(`${counter} es multiplo de 8`)
       }
-      if(this.state.counter > 20) { 
-        this.setState({counter: 'Se a terminado'}) 
+      if(counter >= stop) { 
+        // this.setState({counter: 'Se a terminado'}) 
         clearInterval(this.counterInterval)
       }
   }
   setCounter() {
-    if(this.state.counter !== 0) {
-        this.setState({counter: this.state.counter + this.props.numInit })
+    let {counter} = this.state
+    let {step} = this.props
+    if(counter !== 0) {
+        this.setState({counter: counter + step })
         return
     }
-    this.setState({counter: this.state.counter + 1 })
+    this.setState({counter: counter + 1 })
   }
   componentWillUnmount() {
     if(this.counterInterval) clearInterval(this.counterInterval)
