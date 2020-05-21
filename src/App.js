@@ -12,6 +12,7 @@ import Home from './pages/Home'
 import Notes from './pages/Notes'
 import Menu from './pages/Menu'
 import Conversion from './pages/Conversion'
+import CreditCard from './pages/CreditCard'
 
 // CSS
 import './App.css'
@@ -32,8 +33,11 @@ export default class App extends Component {
             <Route exact path='/holi' component={Notes}>
               <h1>Holis!!</h1>
             </Route>
-            <Router exact path='/currenty-converter' component={Conversion}>
+            <Router exact path='/currency-converter' component={Conversion}>
               <Conversion />
+            </Router>
+            <Router exact path='/credit-card'>
+              <CreditCard />
             </Router>
           </Switch>
         </div>

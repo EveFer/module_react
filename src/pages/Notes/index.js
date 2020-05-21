@@ -4,17 +4,16 @@ import React, { Component } from 'react'
 import Header from '../../components/Header'
 import Note from '../../components/Note'
 
+// CUSTOM Component
+import NewNote from './components/NewNote'
+
 export default class Notes extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      notes: [],
-      title: '',
-      content: ''
+      notes: []
     }
     this.renderNotes = this.renderNotes.bind(this)
-    this.handleInputChange = this.handleInputChange.bind(this)
-    this.handleAddNote = this.handleAddNote.bind(this)
   }
 
   renderNotes () {
@@ -24,22 +23,11 @@ export default class Notes extends Component {
     })
   }
 
-  handleInputChange ({ target: { name, value } }) {
-    this.setState({
-      [name]: value
-    })
-  }
-
-  handleAddNote (event) {
-    event.preventDefault()
-    const { notes, title, content } = this.state
-    const note = {
-      title,
-      content
-    }
-    this.setState({
+  handleNewNote = (note) => {
+    const { notes } = this.state
+    this.setState({ 
       notes: [...notes, note]
-    })
+     })
   }
 
   render () {
@@ -52,27 +40,7 @@ export default class Notes extends Component {
           />
           <div className='Notes-container'>
             <ul>{this.renderNotes()}</ul>
-            <div>
-              <form onSubmit={this.handleAddNote}>
-                <div className='Notes-form-content'>
-                  <div className='Notes-inputs-content'>
-                    <input
-                      value={this.state.title}
-                      onChange={this.handleInputChange}
-                      placeholder='Titulo de la Nota'
-                      name='title'
-                    />
-                    <input
-                      value={this.state.content}
-                      onChange={this.handleInputChange}
-                      placeholder='Contenido de la Nota'
-                      name='content'
-                    />
-                  </div>
-                  <button type='submit'>Add</button>
-                </div>
-              </form>
-            </div>
+            <NewNote handleNewNote={this.handleNewNote} /> {/* Pasar el cuerpo de la funcion como prop al hijo */}
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 // Ejerccio
 
@@ -13,41 +13,45 @@ import React, { Component } from 'react';
  */
 
 export default class Counter extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
-        counter: 0
+      counter: 0
     }
   }
 
   // se ejecuta una vez el component se haya montado
-  componentDidMount() {
-      this.counterInterval = setInterval(()=> this.setCounter(), 1000)
+  componentDidMount () {
+    this.counterInterval = setInterval(() => this.setCounter(), 1000)
   }
-  componentDidUpdate() {
-    let {counter} = this.state
-    let { stop, mutliplo } = this.props
-      if(counter%mutliplo === 0){
-        console.log(`${counter} es multiplo de 8`)
-      }
-      if(counter >= stop) { 
-        // this.setState({counter: 'Se a terminado'}) 
-        clearInterval(this.counterInterval)
-      }
-  }
-  setCounter() {
-    let {counter} = this.state
-    let {step} = this.props
-    if(counter !== 0) {
-        this.setState({counter: counter + step })
-        return
+
+  componentDidUpdate () {
+    const { counter } = this.state
+    const { stop, mutliplo } = this.props
+    if (counter % mutliplo === 0) {
+      console.log(`${counter} es multiplo de 8`)
     }
-    this.setState({counter: counter + 1 })
+    if (counter >= stop) {
+      // this.setState({counter: 'Se a terminado'})
+      clearInterval(this.counterInterval)
+    }
   }
-  componentWillUnmount() {
-    if(this.counterInterval) clearInterval(this.counterInterval)
+
+  setCounter () {
+    const { counter } = this.state
+    const { step } = this.props
+    if (counter !== 0) {
+      this.setState({ counter: counter + step })
+      return
+    }
+    this.setState({ counter: counter + 1 })
   }
-  render() {
+
+  componentWillUnmount () {
+    if (this.counterInterval) clearInterval(this.counterInterval)
+  }
+
+  render () {
     return (
       <div>
         <p>Counter: {this.state.counter}</p>
