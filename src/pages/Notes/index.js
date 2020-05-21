@@ -76,7 +76,6 @@ export default class Notes extends Component {
           </div>
         </div>
       </div>
-
     )
   }
 }

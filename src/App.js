@@ -11,6 +11,7 @@ import {
 import Home from './pages/Home'
 import Notes from './pages/Notes'
 import Menu from './pages/Menu'
+import Conversion from './pages/Conversion'
 
 // CSS
 import './App.css'
@@ -22,11 +23,18 @@ export default class App extends Component {
         <div className='App'>
           <Menu />
           <Switch>
-            <Route exact path='/' component={Home} />
-            <Route exact path='/notes' component={Notes} />
+            <Route exact path='/'>
+              <Home />
+            </Route>
+            <Route exact path='/notes'>
+              <Notes />
+            </Route>
             <Route exact path='/holi' component={Notes}>
               <h1>Holis!!</h1>
             </Route>
+            <Router exact path='/currenty-converter' component={Conversion}>
+              <Conversion />
+            </Router>
           </Switch>
         </div>
       </Router>
