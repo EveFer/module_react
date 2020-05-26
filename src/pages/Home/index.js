@@ -13,6 +13,7 @@ function Home () {
           title='Kodemia Modulo 3'
           description='Estoy en Home'
         />
+        <p>No puedes ver el contendio de  esta pagina D: Inicia Sesión</p>
       </div>
     </div>
   )

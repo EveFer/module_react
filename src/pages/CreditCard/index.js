@@ -33,20 +33,20 @@ export default class CreditCard extends Component {
             description='xD'
           />
 
+          <div className='form'>
+            <Form handlerCardWrite={this.handlerCardWrite} />
+          </div>
+
           <div className='wrapper-content'>
-            <div className='credits-card'>
-              <div className='credit-1 credit-boder'>
-                <p>{number}</p>
-                <p>{owner}</p>  <span>{expiry}</span>
-              </div>
-              <div className='credit-2 credit-boder'>
-                <span>{cvc}</span>
-              </div>
+            <div className='credit-1 credit-boder'>
+              <p>{number}</p>
+              <p>{owner}</p>  <span>{expiry}</span>
             </div>
-            <div className='form'>
-              <Form handlerCardWrite={this.handlerCardWrite} />
+            <div className='credit-2 credit-boder'>
+              <span>{cvc}</span>
             </div>
           </div>
+
         </div>
       </div>
     )

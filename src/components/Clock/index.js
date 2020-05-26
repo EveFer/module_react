@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 
+// CSS
+import './Clock.css'
+
 export default class Clock extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      date: new Date(),
-      name: 'Fernanda'
+      date: new Date()
     }
   }
 
@@ -23,10 +25,10 @@ export default class Clock extends Component {
 
   render () {
     // console.log('Desde el render')
+    const { date } = this.state
     return (
-      <div>
-        <p>{this.state.name}</p>
-        <p>{this.state.date.toLocaleTimeString()}</p>
+      <div className='clock-digital'>
+        <span>{date.toLocaleTimeString()}</span>
       </div>
     )
   }

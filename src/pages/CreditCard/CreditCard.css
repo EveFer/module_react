@@ -1,17 +1,17 @@
+
 .wrapper-content {
     display: flex;
-    width: 50vw;
-    justify-content: space-between;
+    justify-content: space-around;
+    margin-top: 60px;
 }
 
-.credit-boder {
+.wrapper-content .credit-boder {
     border: 1px solid white;
     border-radius: 5px;
     height: 170px;
     width: 250px;
 }
 
-.credit-2  {
-    margin-top: 10px
+.credit-2 {
+    margin-left:20px;
 }
-

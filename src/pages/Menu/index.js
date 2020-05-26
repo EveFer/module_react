@@ -11,6 +11,7 @@ export default class Menu extends Component {
       isMenuActive: false
     }
     this.handleToggleMenu = this.handleToggleMenu.bind(this)
+    this.handleLogOut = this.handleLogOut.bind(this)
   }
 
   handleToggleMenu () {
@@ -20,7 +21,13 @@ export default class Menu extends Component {
     })
   }
 
+  handleLogOut () {
+    this.props.logOut()
+    this.handleToggleMenu()
+  }
+
   render () {
+    const { isUserLoggedIn } = this.props
     const { isMenuActive } = this.state
     const menuClass = isMenuActive ? 'Menu-active' : ''
     return (
@@ -34,14 +41,36 @@ export default class Menu extends Component {
                   <Link to='/' onClick={this.handleToggleMenu}>Home</Link>
                 </li>
                 <li>
-                  <Link to='/notes' onClick={this.handleToggleMenu}>Notas</Link>
+                  <Link to='/clock' onClick={this.handleToggleMenu}>Clock</Link>
                 </li>
+                <li>
+                  <Link to='/posts' onClick={this.handleToggleMenu}>Posts</Link>
+                </li>
+                {
+                  isUserLoggedIn ? (
+                    <li>
+                      <Link to='/notes' onClick={this.handleToggleMenu}>Notas</Link>
+                    </li>
+
+                  ) : null
+                }
                 <li>
                   <Link to='/currency-converter' onClick={this.handleToggleMenu}>Conversion</Link>
                 </li>
                 <li>
                   <Link to='/credit-card' onClick={this.handleToggleMenu}>Credit Card</Link>
                 </li>
+                {
+                  !isUserLoggedIn ? (
+                    <li>
+                      <Link to='/login' onClick={this.handleToggleMenu}>Iniciar Sesión</Link>
+                    </li>
+                  ) : (
+                    <li>
+                      <button onClick={this.handleLogOut}>Cerrar Sesión</button>
+                    </li>
+                  )
+                }
               </ul>
             </div>
           </nav>

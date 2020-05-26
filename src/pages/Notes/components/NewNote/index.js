@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 
+// CSS
+import './NewNote.css'
+
 export default class NewNote extends Component {
   constructor (props) {
     super(props)
@@ -36,22 +39,28 @@ export default class NewNote extends Component {
       <div className='Container'>
         <div>
           <form onSubmit={this.handleAddNote}>
-            <div className='Notes-form-content'>
-              <div className='Notes-inputs-content'>
-                <input
-                  value={this.state.title}
-                  onChange={this.handleInputChange}
-                  placeholder='Titulo de la Nota'
-                  name='title'
-                />
-                <input
-                  value={this.state.content}
-                  onChange={this.handleInputChange}
-                  placeholder='Contenido de la Nota'
-                  name='content'
-                />
+            <div className='notes-form-content'>
+              <div className='notes-inputs-content'>
+                <div className='notes-group-form'>
+                  <label>Title:</label>
+                  <input
+                    value={this.state.title}
+                    onChange={this.handleInputChange}
+                    placeholder='Titulo de la Nota'
+                    name='title'
+                  />
+                </div>
+                <div className='notes-group-form'>
+                  <label>Content:</label>
+                  <input
+                    value={this.state.content}
+                    onChange={this.handleInputChange}
+                    placeholder='Contenido de la Nota'
+                    name='content'
+                  />
+                </div>
               </div>
-              <button type='submit'>Add</button>
+              <button className='btn' type='submit'>Add</button>
             </div>
           </form>
         </div>

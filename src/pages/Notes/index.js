@@ -4,6 +4,9 @@ import React, { Component } from 'react'
 import Header from '../../components/Header'
 import Note from '../../components/Note'
 
+// CSS
+import './Notes.css'
+
 // CUSTOM Component
 import NewNote from './components/NewNote'
 
@@ -68,18 +71,28 @@ export default class Notes extends Component {
   }
 
   render () {
+    const { isUserLoggedIn } = this.props
+
     return (
       <div className='Container'>
-        <div>
-          <Header
-            title='Kodemia Modulo 3'
-            description='Estoy en Notes'
-          />
-          <div className='Notes-container'>
-            <ul>{this.renderNotes()}</ul>
-            <NewNote handleNewNote={this.onHandleNewNote} /> {/* Pasar el cuerpo de la funcion como prop al hijo */}
-          </div>
-        </div>
+        {
+          isUserLoggedIn ? (
+            <div>
+              <Header
+                title='Kodemia Modulo 3'
+                description='Estoy en Notes'
+              />
+              <div className='notes-container'>
+                <NewNote handleNewNote={this.onHandleNewNote} /> {/* Pasar el cuerpo de la funcion como prop al hijo */}
+                <div className='notes-scroll'>
+                  <ul>{this.renderNotes()}</ul>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <p>Por favor Inicia Sesión</p>
+          )
+        }
       </div>
     )
   }

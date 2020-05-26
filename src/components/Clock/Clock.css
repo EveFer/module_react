@@ -1,0 +1,7 @@
+.clock-digital {
+    border: 2px solid white;
+    height: 80px;
+    font-size: 60px;
+    font-family: 'Orbitron', sans-serif;
+    padding: 10px
+}

@@ -1,7 +1,7 @@
 .note {    
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-evenly;
 }
 .note p {
@@ -12,4 +12,10 @@ ul li::before {
 }
 p strong {
     color: lime;
+}
+
+.note .note-card {
+    border: 2px solid gray;
+    width: 300px;
+    margin-bottom: 20px;
 }

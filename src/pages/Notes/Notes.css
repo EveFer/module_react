@@ -1,0 +1,8 @@
+.notes-container .notes-scroll {
+    height: 300px;
+    overflow-y:  scroll;
+}
+
+.notes-container .notes-scroll ul {
+    padding: 0;
+}

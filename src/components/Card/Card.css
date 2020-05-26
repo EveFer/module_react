@@ -7,10 +7,14 @@
     justify-content: space-between;
     font-style: normal;
     font-family: Roboto;
+    background-color: black;
+    margin-bottom: 20px;
+    border-radius: 10px;
 }
 
 .card-body {
     text-align: left;
+    padding-left: 30px;
 }
 .card-category {
     text-transform: uppercase;
@@ -23,7 +27,7 @@
 .card-author {
     text-decoration: none;
     cursor: pointer;
-    color: #000;
+    color: #fff;
     /* color: #acacace2; */
 }
 
