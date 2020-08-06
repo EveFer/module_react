@@ -60,6 +60,9 @@ export default class Menu extends Component {
                 <li>
                   <Link to='/credit-card' onClick={this.handleToggleMenu}>Credit Card</Link>
                 </li>
+                <li>
+                  <Link to='/hooks' onClick={this.handleToggleMenu}>Hooks</Link>
+                </li>
                 {
                   !isUserLoggedIn ? (
                     <li>

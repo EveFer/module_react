@@ -15,6 +15,7 @@ import Notes from './pages/Notes'
 import Menu from './pages/Menu'
 import Conversion from './pages/Conversion'
 import CreditCard from './pages/CreditCard'
+import Hook from './pages/Hooks'
 
 import Login from './pages/Login'
 
@@ -31,7 +32,7 @@ export default class App extends Component {
   }
 
   componentDidMount () {
-    const authToken = localStorage.getItem('userAuthToken')
+    const authToken = window.localStorage.getItem('userAuthToken')
     if (authToken) {
       this.setState({
         isUserLoggedIn: true
@@ -40,7 +41,7 @@ export default class App extends Component {
   }
 
   logOut () {
-    localStorage.removeItem('userAuthToken')
+    window.localStorage.removeItem('userAuthToken')
     this.setState({
       isUserLoggedIn: false
     })
@@ -73,6 +74,9 @@ export default class App extends Component {
             </Router>
             <Router exact path='/credit-card'>
               <CreditCard />
+            </Router>
+            <Router exact path='/hooks'>
+              <Hook />
             </Router>
             <Router exact path='/login'>
               <Login />
